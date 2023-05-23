@@ -1,6 +1,6 @@
 import { DefaultValue, selectorFamily, useRecoilState } from 'recoil';
 import cartState from './cartState';
-import { MAX_CART_QUANTITY, MIN_CART_QUANTITY } from '../../views/CarItem/constants/cartConstants';
+import { MAX_CART_QUANTITY, MIN_CART_QUANTITY } from '../../views/CartItem/constants/cartConstants';
 
 import fetchCartItems from '../../utils/fetchCartItem';
 import { productListState } from '../product/productListState';

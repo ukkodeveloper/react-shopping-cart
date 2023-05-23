@@ -1,11 +1,11 @@
+import { FlexColWrapper, FlexWrapper } from '@pages/Cart/Cart.style';
 import { styled } from 'styled-components';
-import { FlexColWrapper, FlexWrapper } from '../../../../pages/Cart/Cart.style';
 
-export const StyleCartWrapper = styled(FlexColWrapper)`
+export const CartWrapper = styled(FlexColWrapper)`
   flex: 2;
 `;
 
-export const StyleCartItemListWrapper = styled(FlexWrapper)`
+export const CartItemListContainer = styled(FlexWrapper)`
   column-gap: 1rem;
   width: 100%;
   margin: 1rem;
@@ -16,7 +16,7 @@ export const StyleCartItemListWrapper = styled(FlexWrapper)`
   align-items: center;
 `;
 
-export const StyleDeleteCheckedBox = styled.button`
+export const DeleteCheckBox = styled.button`
   background-color: ${({ theme }) => theme.secondaryColor};
   color: ${({ theme }) => theme.lightColor};
   height: 3rem;
@@ -29,7 +29,7 @@ export const StyleDeleteCheckedBox = styled.button`
   }
 `;
 
-export const StyleCheckAllSpan = styled.span`
+export const CheckAllSpan = styled.span`
   font-size: 1.6rem;
   width: 12rem;
 `;

@@ -1,7 +1,6 @@
+import { Header } from '@layout/Header';
+import { Container } from '@styles/style';
 import { Outlet } from 'react-router-dom';
-
-import Header from '../Header';
-import { Container } from '../../styles/style';
 
 function HomeLayout() {
   return (

@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-export const CartPageWrapper = styled.section`
+export const CartPageContainer = styled.section`
   display: flex;
   justify-content: space-between;
 

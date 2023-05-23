@@ -1,18 +1,17 @@
 import { Suspense } from 'react';
-
-import ExpectedPayment from '../../views/Payment/components/ExpectedPayment/ExpectedPayment';
-import { CartPageWrapper } from './Cart.style';
-import SkeletonCart from '../../views/CartItemList/components/SkeletonCartItemList/SkeletonCart';
-import CartItemListContainer from '../../views/CartItemList/components/CartItemListContainer/CartItemListContainer';
+import * as S from './Cart.style';
+import SkeletonCart from '@views/CartItemList/components/SkeletonCartItemList/SkeletonCartItemList';
+import CartItemList from '@views/CartItemList/components/CartItemList/CartItemList';
+import { ExpectedPayment } from '@views/Payment/components/ExpectedPayment';
 
 function Cart() {
   return (
-    <CartPageWrapper>
+    <S.CartPageContainer>
       <Suspense fallback={<SkeletonCart />}>
-        <CartItemListContainer />
+        <CartItemList />
         <ExpectedPayment />
       </Suspense>
-    </CartPageWrapper>
+    </S.CartPageContainer>
   );
 }
 

@@ -1,28 +1,27 @@
 import { styled } from 'styled-components';
-import { StyleCartItemWrapper } from '../../../CarItem/components/CartItemBox/CartItemBox.style';
-import { StyleCartWrapper } from '../CartItemListContainer/CartItemList.style';
-
+import * as S from '../CartItemList/CartItemList.style';
 import {
-  StylePayingBox,
-  StylePayingWrapper,
-} from '../../../Payment/components/ExpectedPayment/ExpectedPayment.style';
+  PayingBox,
+  PayingContainer,
+} from '@views/Payment/components/ExpectedPayment/ExpectedPayment.style';
+import { CartItemContainer } from '@views/CartItem/components/CartItemBox/CartItemBox.style';
 
 function SkeletonCart() {
   return (
     <>
-      <StyleCartWrapper>
+      <S.CartWrapper>
         {Array.from({ length: 3 }).map((_, index) => (
           <SkeletonImage key={index} />
         ))}
-      </StyleCartWrapper>
-      <StylePayingWrapper>
+      </S.CartWrapper>
+      <PayingContainer>
         <SkeletonPayingBox />
-      </StylePayingWrapper>
+      </PayingContainer>
     </>
   );
 }
 
-const SkeletonImage = styled(StyleCartItemWrapper)`
+const SkeletonImage = styled(CartItemContainer)`
   background: linear-gradient(-90deg, #aaa, #f0f0f0, #aaa, #f0f0f0);
   background-size: 400%;
   animation: skeleton-animation 5s infinite ease-out;
@@ -46,7 +45,7 @@ const SkeletonImage = styled(StyleCartItemWrapper)`
   }
 `;
 
-const SkeletonPayingBox = styled(StylePayingBox)`
+const SkeletonPayingBox = styled(PayingBox)`
   background: linear-gradient(-90deg, #aaa, #f0f0f0, #aaa, #f0f0f0);
   background-size: 400%;
   animation: skeleton-animation 5s infinite ease-out;

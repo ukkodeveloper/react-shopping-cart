@@ -1,9 +1,8 @@
+import { Container } from '@styles/style';
 import * as S from './Header.style';
-
-import Logo from '../Logo';
-import CartIconWithCount from '../../views/CarItem/components/CartStepperWithIcon';
-import { Container } from '../../styles/style';
 import { Suspense } from 'react';
+import Logo from '@layout/Logo/Logo';
+import { CartStepperWithIcon } from '@views/CartItem/components/CartStepperWithIcon';
 
 function Header() {
   return (
@@ -12,7 +11,7 @@ function Header() {
         <S.HeaderWrapper>
           <Logo />
           <Suspense>
-            <CartIconWithCount />
+            <CartStepperWithIcon />
           </Suspense>
         </S.HeaderWrapper>
       </Container>

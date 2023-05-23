@@ -1,5 +1,5 @@
-import { BASE_URL, CART_PATH } from '../../../constants/urlConstants';
-import { createApiRequests } from '../../../utils/createApiRequests';
+import { BASE_URL, CART_PATH } from '@constants/urlConstants';
+import { createApiRequests } from '@utils/createApiRequests';
 
 const fetchCartItemsMethods = createApiRequests(BASE_URL)(CART_PATH);
 

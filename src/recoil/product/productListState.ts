@@ -1,6 +1,6 @@
+import { getProductsFetched } from '@views/ProductItemList/remote/fetchProductList';
 import { atom, selector, useRecoilValue } from 'recoil';
-import { ProductItemType } from '../../types/ProductType';
-import { getProductsFetched } from '../../views/ProductItemList/remote/fetchProductList';
+import { ProductItemType } from 'types/ProductType';
 
 export const productListState = atom<ProductItemType[]>({
   key: 'productListState',

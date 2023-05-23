@@ -1,12 +1,12 @@
+import { useCartItemQuantityBy } from '@recoil/cart/withItemQuantityBy';
 import * as S from './CartQuantityField.style';
-import * as T from '../../../../types/ProductType';
 
-import QuantityCounter from '../../../../common/Stepper';
-import cartIcon from '../../../../assets/cart.svg';
-import { useCartItemQuantityBy } from '../../../../recoil/cart/withItemQuantityBy';
+import { ProductItemType } from 'types/ProductType';
+import { Stepper } from '@common/Stepper';
+import cartIcon from '@assets/cart.svg';
 
 interface CartQuantityFieldProps {
-  product: T.ProductItemType;
+  product: ProductItemType;
 }
 
 function CartQuantityField({ product }: CartQuantityFieldProps) {
@@ -15,9 +15,9 @@ function CartQuantityField({ product }: CartQuantityFieldProps) {
   const isQuantityZero = quantity > 0;
 
   return (
-    <S.ControllerWrapper>
+    <S.StepperContainer>
       {isQuantityZero ? (
-        <QuantityCounter
+        <Stepper
           quantity={quantity}
           onChange={(event) => {
             setQuantity(Number(event.target.value));
@@ -43,7 +43,7 @@ function CartQuantityField({ product }: CartQuantityFieldProps) {
           <img src={cartIcon}></img>
         </S.CartIcon>
       )}
-    </S.ControllerWrapper>
+    </S.StepperContainer>
   );
 }
 

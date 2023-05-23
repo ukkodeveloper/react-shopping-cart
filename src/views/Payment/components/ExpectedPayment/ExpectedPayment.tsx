@@ -1,43 +1,34 @@
-import { FlexWrapper } from '../../../../pages/Cart/Cart.style';
-import { useCartTotalPriceReadOnly } from '../../../../recoil/cart/withTotalPrice';
-import {
-  StylePayingBox,
-  StylePayingDiv,
-  StylePayingTitle,
-  StyleContentText,
-  StylePayingWrapper,
-  StyleTotalContainer,
-  StyleTotalText,
-  PayingButton,
-} from './ExpectedPayment.style';
+import { FlexWrapper } from '@pages/Cart/Cart.style';
+import * as S from './ExpectedPayment.style';
+import { useCartTotalPriceReadOnly } from '@recoil/cart/withTotalPrice';
 
 function ExpectedPayment() {
   const { totalPriceReadOnly } = useCartTotalPriceReadOnly();
   const deliveryFee = totalPriceReadOnly ? 3000 : 0;
   const totalPayingPrice = totalPriceReadOnly + deliveryFee;
   return (
-    <StylePayingWrapper>
-      <StylePayingBox>
-        <StylePayingDiv>
-          <StylePayingTitle>결제 예상 금액</StylePayingTitle>
-        </StylePayingDiv>
-        <StylePayingDiv>
+    <S.PayingContainer>
+      <S.PayingBox>
+        <S.PayingBackground>
+          <S.PayingTitle>결제 예상 금액</S.PayingTitle>
+        </S.PayingBackground>
+        <S.PayingBackground>
           <FlexWrapper>
-            <StyleContentText>총 상품 가격</StyleContentText>
-            <StyleContentText> {totalPriceReadOnly.toLocaleString('ko-KR')}원</StyleContentText>
+            <S.ContentText>총 상품 가격</S.ContentText>
+            <S.ContentText> {totalPriceReadOnly.toLocaleString('ko-KR')}원</S.ContentText>
           </FlexWrapper>
           <FlexWrapper>
-            <StyleContentText>총 배송비</StyleContentText>
-            <StyleContentText>{deliveryFee.toLocaleString('ko-KR')}원</StyleContentText>
+            <S.ContentText>총 배송비</S.ContentText>
+            <S.ContentText>{deliveryFee.toLocaleString('ko-KR')}원</S.ContentText>
           </FlexWrapper>
-          <StyleTotalContainer>
-            <StyleTotalText>총 주문금액</StyleTotalText>
-            <StyleTotalText>{totalPayingPrice.toLocaleString('ko-KR')}원</StyleTotalText>
-          </StyleTotalContainer>
-        </StylePayingDiv>
-        <PayingButton disabled={totalPriceReadOnly === 0}>결제하기</PayingButton>
-      </StylePayingBox>
-    </StylePayingWrapper>
+          <S.TotalPriceContainer>
+            <S.TotalText>총 주문금액</S.TotalText>
+            <S.TotalText>{totalPayingPrice.toLocaleString('ko-KR')}원</S.TotalText>
+          </S.TotalPriceContainer>
+        </S.PayingBackground>
+        <S.PayingButton disabled={totalPriceReadOnly === 0}>결제하기</S.PayingButton>
+      </S.PayingBox>
+    </S.PayingContainer>
   );
 }
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ControllerWrapper = styled.div`
+export const StepperContainer = styled.div`
   display: flex;
   align-items: start;
 `;

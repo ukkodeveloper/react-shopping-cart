@@ -1,14 +1,14 @@
+import { FlexColWrapper, FlexWrapper } from '@pages/Cart/Cart.style';
 import { styled } from 'styled-components';
-import { FlexColWrapper, FlexWrapper } from '../../../../pages/Cart/Cart.style';
 
-export const StylePayingWrapper = styled.div`
+export const PayingContainer = styled.div`
   display: flex;
   flex: 1 1 150px;
   align-items: start;
   justify-content: start;
 `;
 
-export const StylePayingBox = styled(FlexColWrapper)`
+export const PayingBox = styled(FlexColWrapper)`
   column-gap: 1rem;
   width: 90%;
   margin: 1rem;
@@ -21,7 +21,7 @@ export const StylePayingBox = styled(FlexColWrapper)`
   justify-content: start;
 `;
 
-export const StylePayingDiv = styled.div`
+export const PayingBackground = styled.div`
   background-color: ${({ theme }) => theme.secondaryColor};
   border: ${({ theme }) => theme.secondaryColor} 1px solid;
   padding: 1rem;
@@ -29,24 +29,24 @@ export const StylePayingDiv = styled.div`
   margin: 0 0 2rem 0;
 `;
 
-export const StylePayingTitle = styled.h3`
+export const PayingTitle = styled.h3`
   font-size: 2rem;
 
   font-weight: 800;
 `;
 
-export const StyleContentText = styled.span`
+export const ContentText = styled.span`
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0.5rem;
 `;
 
-export const StyleTotalText = styled(StyleContentText)`
+export const TotalText = styled(ContentText)`
   font-size: 1.7rem;
   font-weight: 800;
 `;
 
-export const StyleTotalContainer = styled(FlexWrapper)`
+export const TotalPriceContainer = styled(FlexWrapper)`
   border-top: ${({ theme }) => theme.primaryColor} 2px solid;
   padding-top: 0.5rem;
   color: ${({ theme }) => theme.primaryColor};
